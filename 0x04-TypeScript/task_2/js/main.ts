@@ -47,3 +47,16 @@ export function createEmployee(salary: number | string): DirectorInterface | Tea
     return new Director();
     }
   }
+
+export function isDirector (employee: DirectorInterface | TeacherInterface): employee is DirectorInterface {
+  return (employee as DirectorInterface).workDirectorTasks !== undefined;
+}
+
+
+export function executeWork(employee: TeacherInterface | DirectorInterface): void {
+  if (isDirector(employee)) {
+    console.log(employee.workDirectorTasks());
+  } else {
+    console.log(employee.workTeacherTasks());
+  }
+}
