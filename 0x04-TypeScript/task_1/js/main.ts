@@ -51,6 +51,11 @@ class StudentClass {
     this.lastName = lastName;
   }
 
+  export const Director = class Director implements DirectorInterface {
+    workFromHome() : string {
+      return 'Working from home';
+    }
+
   workOnHomeWork(): string {
     return 'Currently working';
   }
