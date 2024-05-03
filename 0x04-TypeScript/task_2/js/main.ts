@@ -48,9 +48,9 @@ export function createEmployee(salary: number | string): DirectorInterface | Tea
     }
   }
 
-export function isDirector (employee: DirectorInterface | TeacherInterface): employee is DirectorInterface {
-  return (employee as DirectorInterface).workDirectorTasks !== undefined;
-}
+// export function isDirector (employee: DirectorInterface | TeacherInterface): employee is DirectorInterface {
+//   return (employee as DirectorInterface).workDirectorTasks !== undefined;
+// }
 
 
 export function executeWork(employee: TeacherInterface | DirectorInterface): void {
@@ -60,3 +60,14 @@ export function executeWork(employee: TeacherInterface | DirectorInterface): voi
     console.log(employee.workTeacherTasks());
   }
 }
+
+export type Subjects = 'Math' | 'History';
+
+export function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  }
+  else if (todayClass === 'History') {
+    return 'Teaching History';
+  }
+  }
