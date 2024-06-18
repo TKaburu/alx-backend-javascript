@@ -11,5 +11,7 @@ rl.question('Welcome to Holberton School, what is your name? \n', (name) => {
 });
 // listens for the close evnt then prints out the clossing msg
 rl.on('close', () => {
-  console.log('This important software is now closing');
+  console.log('This important software is now closing \n');
 });
+
+module.exports = r1;
