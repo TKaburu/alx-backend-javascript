@@ -1,17 +1,13 @@
-const readline = require('node:readline'); // used to get input from stdin
+console.log('Welcome to Holberton School, what is your name?');
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-rl.question('Welcome to Holberton School, what is your name? \n', (name) => {
-  console.log(`Your name is: ${name}`);
-  rl.close(); // stops readline from listening to stdin since we are done receiving input
-//   console.log('This important software is now closing')
-});
-// listens for the close evnt then prints out the clossing msg
-rl.on('close', () => {
-  console.log('This important software is now closing \n');
+process.stdin.on('readable', () => {
+  const name = process.stdin.read(); // This will read the input
+  if (name !== null) { // meaning there is something user has typed
+    process.stdout.write(`Your name is: ${name}`);
+  }
 });
 
-module.exports = r1;
+// console.log adds a new line by default
+process.stdin.on('end', () => {
+  console.log('This important software is now closing');
+});
