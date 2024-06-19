@@ -33,6 +33,6 @@ function countStudents(filePath) {
     // i database is not available throw an error
     throw new Error('Cannot load the database');
   }
-};
+}
 
-module.exports = countStudents
+module.exports = countStudents;
