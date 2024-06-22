@@ -10,6 +10,7 @@ describe('Index page', () => {
         done();
       });
     });
+  });
 
   describe('cart functionality', () => {
     it('should return status code 200 when id is a number', (done) => {
@@ -29,12 +30,4 @@ describe('Index page', () => {
     });
   });
 
-  describe('GET /cart/:id', () => {
-    
-  });
-
-  
-    
-
-  });
 });
